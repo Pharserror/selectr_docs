@@ -1,0 +1,377 @@
+<!DOCTYPE html><html class="default" lang="en" data-base="."><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>selectr</title><meta name="description" content="Documentation for selectr"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script defer src="assets/main.js"></script><script async src="assets/icons.js" id="tsd-icons-script"></script><script async src="assets/search.js" id="tsd-search-script"></script><script async src="assets/navigation.js" id="tsd-nav-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";document.body.style.display="none";setTimeout(() => app?app.showPage():document.body.style.removeProperty("display"),500)</script><header class="tsd-page-toolbar"><div class="tsd-toolbar-contents container"><div class="table-cell" id="tsd-search"><div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><use href="assets/icons.svg#icon-search"></use></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div><div class="field"><div id="tsd-toolbar-links"></div></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">selectr</a></div><div class="table-cell" id="tsd-widgets"><a href="#" class="tsd-widget tsd-toolbar-icon menu no-caption" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><use href="assets/icons.svg#icon-menu"></use></svg></a></div></div></header><div class="container container-main"><div class="col-content"><div class="tsd-page-title"><h1>selectr</h1></div><div class="tsd-panel tsd-typography"><a id="selectr-1" class="tsd-anchor"></a><h1 class="tsd-anchor-link">SelectR<a href="#selectr-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1><p>SelectR is a Select2-type widget but rewritten in React to provide more flexibility
+and control through use of state and props.</p>
+<a id="goals" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Goals<a href="#goals" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>There are some goals behind this project that caused me to write it in the first place:</p>
+<ol>
+<li>Everything that should be customizable shall be (within reason).</li>
+<li>Tests shall be abundant and exhaustive.</li>
+<li>Docs shall be abundant and exhaustive.</li>
+</ol>
+<a id="version-300-notes" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Version 3.0.0 Notes<a href="#version-300-notes" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>I've since updated this project to use vite.js for a more streamlined build and
+development experience.</p>
+<a id="getting-started---development" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Getting Started - Development<a href="#getting-started---development" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>In your terminal run</p>
+<pre><code class="bash"><span class="hl-0">npx</span><span class="hl-1"> </span><span class="hl-2">vite</span><span class="hl-1"> </span><span class="hl-2">build</span>
+</code><button type="button">Copy</button></pre>
+
+<p>Then you can use <code>yalc</code> to link your development build to your project by:</p>
+<ul>
+<li>installing <code>yalc</code> if you don't have it</li>
+</ul>
+<pre><code class="bash"><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">i</span><span class="hl-1"> </span><span class="hl-3">-g</span><span class="hl-1"> </span><span class="hl-2">yalc</span>
+</code><button type="button">Copy</button></pre>
+
+<ul>
+<li>publish this build</li>
+</ul>
+<pre><code class="bash"><span class="hl-0">yalc</span><span class="hl-1"> </span><span class="hl-2">publish</span>
+</code><button type="button">Copy</button></pre>
+
+<ul>
+<li>then, in your project directory</li>
+</ul>
+<pre><code class="bash"><span class="hl-0">yalc</span><span class="hl-1"> </span><span class="hl-2">add</span><span class="hl-1"> </span><span class="hl-2">selectr</span>
+</code><button type="button">Copy</button></pre>
+
+<a id="getting-started---demo" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Getting Started - Demo<a href="#getting-started---demo" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>Start by editing the <code>vite.config.js</code> and commenting the line below &quot;Build library&quot;
+<code>entry: resolve(__dirname, 'src/v3/Selectr/index.ts')</code>
+then uncomment the line below &quot;Run demo server&quot;
+<code>entry: resolve(__dirname, 'demo.tsx')</code>
+then in your terminal do:</p>
+<pre><code class="bash"><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">i</span><span class="hl-1">; </span><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">i</span><span class="hl-1"> </span><span class="hl-3">-D</span><span class="hl-1"> </span><span class="hl-2">sass</span><br/><span class="hl-0">npx</span><span class="hl-1"> </span><span class="hl-2">vite</span><span class="hl-1"> </span><span class="hl-3">--host</span>
+</code><button type="button">Copy</button></pre>
+
+<a id="known-bugs" class="tsd-anchor"></a><h3 class="tsd-anchor-link">Known bugs<a href="#known-bugs" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><ul>
+<li>Selection at the end of the input with infiniteScrolling set to true will trigger another AJAX call to load more options. Solutions are to introduce a boolean prop to force the input to close after selection or scroll the list back to the top. A third, more state intensive option, would be to track if the bottom of the list had been reached and then an option had been selected and reset that onScroll.</li>
+<li>On tab and enter for non-multiple SelectR's a blank tag is being allowed</li>
+</ul>
+<a id="general-concept" class="tsd-anchor"></a><h3 class="tsd-anchor-link">General Concept<a href="#general-concept" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p>Looking at the initial state for the component there are 3 properties that should be taken into account:</p>
+<ul>
+<li><code>availableOptions</code>: This is the most important of the three. This is an object in the format of:</li>
+</ul>
+<pre><code class="TypeScript"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-4">groupKey</span><span class="hl-1">: {</span><br/><span class="hl-1">    </span><span class="hl-4">label</span><span class="hl-1">: </span><span class="hl-2">&#39;group label text&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-4">nodes</span><span class="hl-1">: [{</span><br/><span class="hl-1">      </span><span class="hl-5">label:</span><span class="hl-1"> </span><span class="hl-2">&#39;Option text visible to user&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-5">group:</span><span class="hl-1"> </span><span class="hl-2">&#39;groupKey&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-5">value:</span><span class="hl-1"> </span><span class="hl-2">&#39;value inserted into value attribute of &lt;option&gt; tag&#39;</span><br/><span class="hl-1">    }, </span><span class="hl-6">/* ... more nodes */</span><span class="hl-1"> ]</span><br/><span class="hl-1">  }, </span><span class="hl-6">// ... more groups</span><br/><span class="hl-1">}</span>
+</code><button type="button">Copy</button></pre>
+
+<ul>
+<li>
+<p>The <code>availableOptions</code> object represents, in a JS way, the DOM structure of what is being created. Please see the following image.</p>
+</li>
+<li>
+<p><code>filteredOptions</code>: This is an array in the format of:</p>
+</li>
+</ul>
+<pre><code class="TypeScript"><span class="hl-1">[{</span><br/><span class="hl-1">    </span><span class="hl-5">label:</span><span class="hl-1"> </span><span class="hl-2">&#39;Option text visible to user&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-5">group:</span><span class="hl-1"> </span><span class="hl-2">&#39;groupKey&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-5">value:</span><span class="hl-1"> </span><span class="hl-2">&#39;value inserted into value attribute of &lt;option&gt; tag&#39;</span><br/><span class="hl-1">}, </span><span class="hl-6">/* ... more nodes */</span><span class="hl-1"> ]</span>
+</code><button type="button">Copy</button></pre>
+
+<ul>
+<li>
+<p>This array should contain nodes plucked from the available options based on the <code>currentUserInput</code>.</p>
+</li>
+<li>
+<p><code>selectedOptions</code>: This is an array in the same format as <code>filteredOptions</code> except this array's objects have been plucked from the array of <code>filteredOptions</code>.</p>
+</li>
+</ul>
+<p>The general application flow is this:</p>
+<a id="initiation" class="tsd-anchor"></a><h3 class="tsd-anchor-link">Initiation<a href="#initiation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><ol>
+<li>Component loads with a prop <code>options</code> in the same format as <code>filteredOptions</code> or a prop <code>async</code> that is a function that will return an object in the form of <code>filteredOptions</code>.</li>
+<li>If a <code>defaultGroupKey</code> prop is supplied then all of the <code>options</code> will be put into the <code>availableOptions</code>'s <code>nodes</code> under this key; otherwise, the key will default to <code>default</code>.</li>
+<li>If the <code>multiple</code> prop is set to <code>true</code> then the <code>groupKey</code>'s of the <code>availableOptions</code> will be assigned to <code>&lt;optgroup&gt;</code>'s that will be rendered in a hidden-by-default <code>&lt;select&gt;</code> element which will hold the actually selected options: the options that a user sees as selected are just a facade.</li>
+<li>The <code>nodes</code> inside each <code>groupKey</code>'s <code>nodes</code> array will be responsible for rendering <code>option</code> elements inside each <code>optgroup</code> (if <code>multiple</code> is set to <code>true</code>) with the matching <code>group</code> <code>groupKey</code> in the form of: <code>&lt;option value={node.value}&gt;{node.label}&lt;/option&gt;</code></li>
+</ol>
+<a id="user-interaction---selection" class="tsd-anchor"></a><h3 class="tsd-anchor-link">User Interaction - Selection<a href="#user-interaction---selection" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><ol>
+<li>The user clicks the <code>&lt;input&gt;</code>.</li>
+<li>If there are groups the user will see each set of options under the group header; otherwise, they will just see the options.</li>
+<li>The user potentially types something.</li>
+<li>The option's <code>li</code> elements are removed from the list if they do not match the <code>currentUserInput</code>.</li>
+<li>A user selects an option.</li>
+<li>The <code>filteredOptions</code> are looked through until the option with the matching value is found, it is then plucked from the <code>filteredOptions</code> and placed into the <code>selectedOptions</code> which, upon component re-render, sets a <code>selected</code> attribute flag on the corresponding <code>&lt;option&gt;</code> in the invisible <code>&lt;select&gt;</code>.</li>
+</ol>
+<a id="user-interaction---deletion" class="tsd-anchor"></a><h3 class="tsd-anchor-link">User Interaction - Deletion<a href="#user-interaction---deletion" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><ol>
+<li>A user clicks the close/dismissal icon for an option.</li>
+<li>The <code>selectedOptions</code> are looked through until the one with the matching value is found: it is then plucked from the <code>selectedOptions</code> and placed back into the <code>availableOptions</code> - if it matches the <code>currentUserInput</code> then the user will see it reappear.</li>
+</ol>
+<a id="user-interaction---creation" class="tsd-anchor"></a><h3 class="tsd-anchor-link">User Interaction - Creation<a href="#user-interaction---creation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><ol>
+<li>The user clicks the <code>&lt;input&gt;</code> and enters some text.</li>
+<li>The option they are looking for is not available so they hit enter, or click the <code>createOptionPrompt</code> (NYI) if no more options are available.</li>
+<li>A new <code>&lt;option&gt;</code> will be inserted into the hidden <code>&lt;select&gt;</code> with the entered text set as the <code>value</code> attribute.</li>
+</ol>
+<a id="user-interaction---modification" class="tsd-anchor"></a><h3 class="tsd-anchor-link">User Interaction - Modification<a href="#user-interaction---modification" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><ol>
+<li>Once a user has created an option they may edit the option if it is at the end of the list by pressing backspace; or, if it is in another position the user may select it by pressing the left or right arrows to select and then press backspace to edit.</li>
+</ol>
+<a id="props" class="tsd-anchor"></a><h3 class="tsd-anchor-link">Props<a href="#props" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Default Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AJAXSpinnerClasses</td>
+<td>'ajax-spinner'</td>
+<td>Class applied to the <code>img</code> tag of the default spinner gif.</td>
+</tr>
+<tr>
+<td>AJAXSpinnerComponentFactory</td>
+<td>undefined</td>
+<td>Pass in a React component factory to render the generated element instead of the default <code>img</code>.</td>
+</tr>
+<tr>
+<td>AJAXSpinnerComponentProps</td>
+<td>{}</td>
+<td>Props to be passed into the spinner component factory.</td>
+</tr>
+<tr>
+<td>AJAXSpinnerListItemClasses</td>
+<td>''</td>
+<td>Class(es) applied to the <code>li</code> tag that holds the spinner.</td>
+</tr>
+<tr>
+<td>async</td>
+<td>undefined</td>
+<td>Function to fetch additional results to render in the list.</td>
+</tr>
+<tr>
+<td>closeIconFactory</td>
+<td>React.createFactory('em')</td>
+<td>React factory that renders the icon which, when clicked/pressed, will remove the element from the selection.</td>
+</tr>
+<tr>
+<td>closeIconClass</td>
+<td>''</td>
+<td>Class(es) applied to the default <code>a</code> tag for the close icon.</td>
+</tr>
+<tr>
+<td>debounceTimeout</td>
+<td>500</td>
+<td>Default timeout for all debounced functions: onScroll and onWindowResize.</td>
+</tr>
+<tr>
+<td>defaultGroupKey</td>
+<td>'default'</td>
+<td>If the multiple prop is true then all options will at least be placed into this <code>OptGroup</code>.</td>
+</tr>
+<tr>
+<td>groups</td>
+<td><code>{ default: { label: '', nodes: [] } }</code></td>
+<td>Template for <code>OptGroup</code>'s and <code>Option</code>'s.</td>
+</tr>
+<tr>
+<td>infiniteScrolling</td>
+<td>false</td>
+<td>If a function is passed in via <code>async</code> and this is set to true then when the user scrolls to the bottom of the list the async function will be fired in order to load more results.</td>
+</tr>
+<tr>
+<td>initialValue</td>
+<td>[]</td>
+<td>An array of objects in the format of <code>{ group: '', label: '', value: '' }</code> to be preselected.</td>
+</tr>
+<tr>
+<td>inputWrapperClass</td>
+<td>''</td>
+<td>Class(es) to be applied to the <code>div</code> that wraps the <code>ul</code> which renders the input.</td>
+</tr>
+<tr>
+<td>isSubmitAsync</td>
+<td>true</td>
+<td>Boolean that dictates whether or not the default form should submit asynchronously.</td>
+</tr>
+<tr>
+<td>manualAJAXPrompt</td>
+<td>'Load more options'</td>
+<td>If a function has been passed in via <code>async</code> and the last <code>async</code> call did not return less than the page size and the user is at the bottom of the list, this prompt will be shown.</td>
+</tr>
+<tr>
+<td>multiple</td>
+<td>false</td>
+<td>Boolean that dictates whether or not multiple options may be selected.</td>
+</tr>
+<tr>
+<td>noMoreOptionsNotice</td>
+<td>'No more options available'</td>
+<td>If a function has been passed in via <code>async</code> and the last <code>async</code> call returned less than the page size and the user is at the bottom of the list, this prompt will be shown.</td>
+</tr>
+<tr>
+<td>noMoreOptionsListItemClasses</td>
+<td>''</td>
+<td>Class(es) to be applied to the <code>li</code> that holds the <code>noMoreOptionsNotice</code>.</td>
+</tr>
+<tr>
+<td>onChange</td>
+<td><code>function() { this.onChange(); }</code></td>
+<td>Function to be run each time the value of the <code>input</code> changes.</td>
+</tr>
+<tr>
+<td>options</td>
+<td>[]</td>
+<td>Array of objects in the format of <code>{ label: '', group: '', value: '' }</code> to be rendered as <code>&lt;option&gt;</code>'s; under the <code>&lt;optgroup&gt;</code> (with text <code>group</code>), if <code>multiple</code> is <code>true</code>.</td>
+</tr>
+<tr>
+<td>optionsListItemClass</td>
+<td>'list-item'</td>
+<td>Class(es) to be applied to the <code>li</code> that renders each option.</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>10</td>
+<td>Param to be passed through <code>async</code> to the server for pagination mechanisms.</td>
+</tr>
+<tr>
+<td>placeholder</td>
+<td>'Please select from the dropdown or type to filter'</td>
+<td>Placeholder for the <code>&lt;input&gt;</code>.</td>
+</tr>
+<tr>
+<td>rootParentId</td>
+<td>'root'</td>
+<td>Id attribute of the root element SelectR is rendered in.</td>
+</tr>
+<tr>
+<td>selectElementClass</td>
+<td>'hidden'</td>
+<td>Class(es) to be applied to the (hidden) <code>select</code> tag that holds the available <code>&lt;option&gt;</code>'s.</td>
+</tr>
+<tr>
+<td>selectElementName</td>
+<td>''</td>
+<td>Value of the <code>name</code> attribute for the <code>select</code> tag.</td>
+</tr>
+<tr>
+<td>selectionFormatter</td>
+<td>this.selectionFormatter</td>
+<td>Function to be invoked on form submission that will format the <code>value</code> of all of the selected <code>&lt;option&gt;</code>'s.</td>
+</tr>
+<tr>
+<td>selectOptionsListWrapperClass</td>
+<td>''</td>
+<td>Class(es) to be applied to the <code>&lt;div&gt;</code> that wraps the <code>&lt;ul&gt;</code> that holds all of the options visible to the user.</td>
+</tr>
+<tr>
+<td>shouldLogErrors</td>
+<td>false</td>
+<td>Boolean to be used in <code>catch</code> blocks to log errors if set to <code>true</code>.</td>
+</tr>
+<tr>
+<td>smartScroll</td>
+<td>false</td>
+<td>Boolean that enables experimental hybrid behavior to determine &quot;the right thing to do&quot; in choice situations where the UX has the potential to break down due to code architecture.</td>
+</tr>
+<tr>
+<td>spinnerImgPath</td>
+<td>'/images/loader.gif'</td>
+<td>Path for the <code>src</code> of the default <code>img</code> tag for the spinner.</td>
+</tr>
+<tr>
+<td>submitMethod</td>
+<td>'POST'</td>
+<td>Default HTTP verb used when the default form is submitted.</td>
+</tr>
+<tr>
+<td>submitPassword</td>
+<td>undefined</td>
+<td>Password to be provided to the XMLHttpRequest via the default form submission.</td>
+</tr>
+<tr>
+<td>submitSelection</td>
+<td>this.submitSelection</td>
+<td>Method invoked when the default form is submitted.</td>
+</tr>
+<tr>
+<td>submitUrl</td>
+<td>'<a href="http://localhost:3000">http://localhost:3000</a>'</td>
+<td>URL to submit the default form to.</td>
+</tr>
+<tr>
+<td>submitUser</td>
+<td>undefined</td>
+<td>Username to be provided to the XMLHttpRequest via the default form submission.</td>
+</tr>
+<tr>
+<td>wrapperClass</td>
+<td>''</td>
+<td>Class(es) to be applied to the <code>&lt;div&gt;</code> that wraps the entire component.</td>
+</tr>
+</tbody>
+</table>
+<a id="state" class="tsd-anchor"></a><h3 class="tsd-anchor-link">State<a href="#state" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Default Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>availableOptions</td>
+<td><code>{ default: { label: '', nodes: [] } }</code></td>
+<td>Object with group keys of objects consisting of group labels and option nodes in the format of <code>{ label: '', group: '', value: '' }</code>.</td>
+</tr>
+<tr>
+<td>canLoadMoreOptions</td>
+<td>false</td>
+<td>Boolean that keeps track of whether or not <code>this.props.async</code> can actually return more options.</td>
+</tr>
+<tr>
+<td>currentlySelectedInputOption</td>
+<td>-1</td>
+<td>Index of the visible option that is currently selected. Pressing left/right on the keyboard will focus a new option and decrease/increase this value.</td>
+</tr>
+<tr>
+<td>currentlySelectedListOption</td>
+<td>0</td>
+<td>Index of the visible option in the list that is currently &quot;selected&quot;/highlighted. Pressing up/down on the keyboard will decrease/increase this value.</td>
+</tr>
+<tr>
+<td>currentUserInput</td>
+<td>''</td>
+<td>Current value of the <code>value</code> attribute of the <code>&lt;input&gt;</code>.</td>
+</tr>
+<tr>
+<td>filteredOptions</td>
+<td>[]</td>
+<td>Options in the list that the user can see based off of the <code>currentUserInput</code>.</td>
+</tr>
+<tr>
+<td>invisibleScreenClass</td>
+<td>'hidden'</td>
+<td>String of either <code>'hidden'</code> or <code>''</code> to be applied as a class to the invisible screen <code>div</code> when the input is closed or open, respectively.</td>
+</tr>
+<tr>
+<td>isAJAXing</td>
+<td>false</td>
+<td>Boolean to keep track of if a request for more options is currently being fired through <code>this.props.async</code>.</td>
+</tr>
+<tr>
+<td>isListHidden</td>
+<td>true</td>
+<td>Boolean that dictates whether or not the list of options is visible to the user.</td>
+</tr>
+<tr>
+<td>isPendingOptionsUpdate</td>
+<td>false</td>
+<td>Boolean to be used in <code>componentShouldUpdate</code> that will determine the course of the lifecycle at said point.</td>
+</tr>
+<tr>
+<td>optionsListWidth</td>
+<td>'0px'</td>
+<td>Current width of the list of options visible to the user: is updated <code>onWindowResize</code>.</td>
+</tr>
+<tr>
+<td>page</td>
+<td>1</td>
+<td>Current page of options related to the <code>currentUserInput</code>: is reset upon deletion of input.</td>
+</tr>
+<tr>
+<td>selectedOptions</td>
+<td>[]</td>
+<td>Array of objects in the format of <code>{ label: '', group: '', value: '' }</code> that determines which objects are selected.</td>
+</tr>
+</tbody>
+</table>
+<a id="scss-variables" class="tsd-anchor"></a><h3 class="tsd-anchor-link">SCSS VARIABLES<a href="#scss-variables" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p>Coming soon: I hope the variable names help at least a little.</p>
+<a id="improvements" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Improvements<a href="#improvements" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><ul>
+<li>Add a prop to show the group label in the selected options; i.e., for a group 'clients' with node labels of emails a selected option would have the text &quot;clients: <a href="mailto:anywaysjim@howyadoin.com">anywaysjim@howyadoin.com</a>&quot;. Could even allow the delimiter to be customizable from just a colon.</li>
+<li>Add a boolean prop to determine whether or not a group header stays sticky for as long as its elements are being scrolled.</li>
+<li>Add a boolean prop to enable/disable a prompt for option creation shown when there are no more options available.</li>
+</ul>
+</div></div><div class="col-sidebar"><div class="page-menu"><div class="tsd-navigation settings"><details class="tsd-accordion"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="assets/icons.svg#icon-chevronDown"></use></svg>Settings</h3></summary><div class="tsd-accordion-details"><div class="tsd-filter-visibility"><span class="settings-label">Member Visibility</span><ul id="tsd-filter-options"><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>External</span></label></li></ul></div><div class="tsd-theme-toggle"><label class="settings-label" for="tsd-theme">Theme</label><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div><details open class="tsd-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="assets/icons.svg#icon-chevronDown"></use></svg>On This Page</h3></summary><div class="tsd-accordion-details"><a href="#selectr-1"><span>SelectR</span></a><ul><li><a href="#goals"><span>Goals</span></a></li><li><a href="#version-300-notes"><span>Version 3.0.0 <wbr/>Notes</span></a></li><li><a href="#getting-started---development"><span>Getting <wbr/>Started -<wbr/> <wbr/>Development</span></a></li><li><a href="#getting-started---demo"><span>Getting <wbr/>Started -<wbr/> <wbr/>Demo</span></a></li><li><ul><li><a href="#known-bugs"><span>Known bugs</span></a></li><li><a href="#general-concept"><span>General <wbr/>Concept</span></a></li><li><a href="#initiation"><span>Initiation</span></a></li><li><a href="#user-interaction---selection"><span>User <wbr/>Interaction -<wbr/> <wbr/>Selection</span></a></li><li><a href="#user-interaction---deletion"><span>User <wbr/>Interaction -<wbr/> <wbr/>Deletion</span></a></li><li><a href="#user-interaction---creation"><span>User <wbr/>Interaction -<wbr/> <wbr/>Creation</span></a></li><li><a href="#user-interaction---modification"><span>User <wbr/>Interaction -<wbr/> <wbr/>Modification</span></a></li><li><a href="#props"><span>Props</span></a></li><li><a href="#state"><span>State</span></a></li><li><a href="#scss-variables"><span>SCSS VARIABLES</span></a></li></ul></li><li><a href="#improvements"><span>Improvements</span></a></li></ul></div></details></div><div class="site-menu"><nav class="tsd-navigation"><a href="modules.html">selectr</a><ul class="tsd-small-nested-navigation" id="tsd-nav-container"><li>Loading...</li></ul></nav></div></div></div><footer><p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></footer><div class="overlay"></div></body></html>
